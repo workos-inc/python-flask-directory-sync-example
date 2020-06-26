@@ -10,7 +10,8 @@ An example Flask app demonstrating Directory Sync with the [WorkOS Python SDK](h
 
 1. The example app looks for the following environment variables:
     - WORKOS_API_KEY - The WorkOS API key can be found [here](https://dashboard.workos.com/api-keys).
-    - SCIM_ENDPOINT_ID - The SCIM endpoint ID for a directory. This can be retrieved from URL in the WorkOS dashboard.
+    - SCIM_ENDPOINT_ID - The SCIM endpoint ID for a directory. This can be retrieved from URL in the WorkOS dashboard:
+    ![](scim_edp_id.png)    
 
 ## Running the app
 Use the following command to run the app:
