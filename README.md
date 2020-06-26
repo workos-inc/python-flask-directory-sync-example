@@ -20,5 +20,5 @@ flask run
 ```
 
 Once running, navigate to:
-    - `http://localhost:5000/users` - Displays a list of all provisioned users.
-    - `http://localhost:5000/groups` - Displays a list of all directory groups.
+* `http://localhost:5000/users` - Displays a list of all provisioned users.
+* `http://localhost:5000/groups` - Displays a list of all directory groups.
