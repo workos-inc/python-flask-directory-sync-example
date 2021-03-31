@@ -1,24 +1,100 @@
 # python-flask-directory-sync-example
-An example Flask app demonstrating Directory Sync with the [WorkOS Python SDK](https://github.com/workos-inc/workos-python).
+A basic Flask app that uses the [WorkOS Python SDK](https://github.com/workos-inc/workos-python) to support Directory Sync.
 
-## Setup
-1. Clone the repo and install the dependencies by running the following:
+## Prerequisites
+- Python 3.6+
+
+## Directory Sync Setup with WorkOS
+First, follow the [Create a New Directory Connection](https://workos.com/docs/directory-sync/guide/create-new-directory-connection) step in the WorkOS Directory Sync guide.
+
+If you get stuck, please reach out to us at support@workos.com so we can help.
+
+## Flask Project Setup
+
+### Clone Directory
+
+1. In your CLI, navigate to the directory into which you want to clone this git repo.
+   ```bash
+   $ cd ~/Desktop/
+   ```
+
+2. Clone this git repo using your preferred secure method (HTTPS or SSH).
+  ```bash
+  # HTTPS
+  $ git clone https://github.com/workos-inc/python-flask-directory-sync-example.git
+  ```
+
+  or
+
+  ```bash
+  # SSH
+  $ git clone git@github.com:workos-inc/python-flask-directory-sync-example.git
+  ```
+
+### Install Dependencies
+
+3. Navigate to the cloned repo.
+   ```bash
+   $ cd python-flask-directory-sync-example
+   ```
+
+4. Create and source a Python virtual environment. You should then see `(env)` at the beginning of your command-line prompt.
+  ```bash
+  $ python3 -m venv env
+  $ source env/bin/activate
+  (env) $
+  ```
+
+5. Install the cloned app's dependencies.
+   ```bash
+   (env) $ pip install -r requirements.txt
+   ```
+
+### Set Environment Variables
+
+6. Obtain and make note of the following values. In the next step, these will be set as environment variables.
+   - Your [WorkOS API key](https://dashboard.workos.com/api-keys)
+   - Your `DIRECTORY_ID`, in the format `directory_<random-alphanumeric-string>`, retrievable from the URL in the Directory Sync area of the WorkOS dashboard:
+    ![](directory_id_location.png)  
+
+7. Ensure you're in the root directory for the example app, `python-flask-directory-sync-example/`. Create a `.env` file to securely store the environment variables. Open this file with the Nano text editor. (This file is listed in this repo's `.gitignore` file, so your sensitive information will not be checked into version control.)
+   ```bash
+   (env) $ touch .env
+   (env) $ nano .env
+   ```
+
+ 8. Once the Nano text editor opens, you can directly edit the `.env` file by listing the environment variables:
     ```bash
-    git clone https://github.com/workos-inc/python-flask-directory-sync-example.git
-    pip install -r requirements.txt
+    export WORKOS_API_KEY=<value found in step 6>
+    export DIRECTORY_ID=<value found in step 6>
     ```
 
-1. The example app looks for the following environment variables:
-    - WORKOS_API_KEY - The WorkOS API key can be found [here](https://dashboard.workos.com/api-keys).
-    - SCIM_ENDPOINT_ID - The SCIM endpoint ID for a directory. This can be retrieved from URL in the WorkOS dashboard:
-    ![](scim_edp_id.png)    
+    To exit the Nano text editor, type `CTRL + x`. When prompted to "Save modified buffer", type `Y`, then press the `Enter` or `Return` key.
 
-## Running the app
-Use the following command to run the app:
-```bash
-flask run
-```
+9. Source the environment variables so they are accessible to the operating system.
+   ```bash
+   (env) $ source .env
+   ```
 
-Once running, navigate to:
-* `http://localhost:5000/users` - Displays a list of all provisioned users.
-* `http://localhost:5000/groups` - Displays a list of all directory groups.
+   You can ensure the environment variables were set correctly by running the following commands. The output should match the corresponding values.
+   ```bash
+   (env) $ echo $WORKOS_API_KEY
+   (env) $ echo $DIRECTORY_ID
+   ```
+
+## Start the server
+
+1. Use this command to run the app:
+   ```bash
+   flask run
+   ```
+
+2. Once the server is running, navigate to http://localhost:7000/users and http://localhost:7000/groups to try out Directory Sync!
+
+    - The `/users` URL corresponds to the WorkOS API's [List Directory Users endpoint](https://workos.com/docs/reference/directory-sync/user/list)
+    - The `/groups` URL corresponds to the WorkOS API's [List Directory Groups endpoint](https://workos.com/docs/reference/directory-sync/group/list)
+    - You can extend this Django example app by adding views to `directory_sync/views.py` for the other available [Directory Sync API endpoints](https://workos.com/docs/reference/directory-sync).
+
+## Need help?
+
+If you get stuck and aren't able to resolve the issue by reading our API reference or tutorials, please  reach out to us at support@workos.com and we'll help you out.
