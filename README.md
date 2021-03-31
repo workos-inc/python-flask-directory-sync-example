@@ -19,10 +19,10 @@ If you get stuck, please reach out to us at support@workos.com so we can help.
    ```
 
 2. Clone this git repo using your preferred secure method (HTTPS or SSH).
-  ```bash
-  # HTTPS
-  $ git clone https://github.com/workos-inc/python-flask-directory-sync-example.git
-  ```
+   ```bash
+   # HTTPS
+   $ git clone https://github.com/workos-inc/python-flask-directory-sync-example.git
+   ```
 
   or
 
@@ -39,11 +39,11 @@ If you get stuck, please reach out to us at support@workos.com so we can help.
    ```
 
 4. Create and source a Python virtual environment. You should then see `(env)` at the beginning of your command-line prompt.
-  ```bash
-  $ python3 -m venv env
-  $ source env/bin/activate
-  (env) $
-  ```
+   ```bash
+   $ python3 -m venv env
+   $ source env/bin/activate
+   (env) $
+   ```
 
 5. Install the cloned app's dependencies.
    ```bash
@@ -89,12 +89,14 @@ If you get stuck, please reach out to us at support@workos.com so we can help.
    flask run
    ```
 
-2. Once the server is running, navigate to http://localhost:7000/users and http://localhost:7000/groups to try out Directory Sync!
+2. Once the server is running, navigate to http://localhost:5000/users and http://localhost:5000/groups to try out Directory Sync!
 
     - The `/users` URL corresponds to the WorkOS API's [List Directory Users endpoint](https://workos.com/docs/reference/directory-sync/user/list)
     - The `/groups` URL corresponds to the WorkOS API's [List Directory Groups endpoint](https://workos.com/docs/reference/directory-sync/group/list)
     - You can extend this Django example app by adding views to `directory_sync/views.py` for the other available [Directory Sync API endpoints](https://workos.com/docs/reference/directory-sync).
 
 ## Need help?
+
+When you clone this repo, the `DEBUG` setting is `False` by default in `app.py`. You can set `DEBUG = True` if you need to troubleshoot something during the tutorial, but you must use `DEBUG = False` in order to successfully connect to the WorkOS API.
 
 If you get stuck and aren't able to resolve the issue by reading our API reference or tutorials, please  reach out to us at support@workos.com and we'll help you out.
