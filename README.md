@@ -26,10 +26,10 @@ If you get stuck, please reach out to us at support@workos.com so we can help.
 
   or
 
-  ```bash
-  # SSH
-  $ git clone git@github.com:workos-inc/python-flask-directory-sync-example.git
-  ```
+   ```bash
+   # SSH
+   $ git clone git@github.com:workos-inc/python-flask-directory-sync-example.git
+   ```
 
 ### Install Dependencies
 
