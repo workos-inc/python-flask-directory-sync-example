@@ -1,15 +1,17 @@
 import os
-
-import flask
+from flask import (Flask, render_template, url_for)
 import workos
 
 DEBUG = False
-app = flask.Flask(__name__)
+app = Flask(__name__)
 
 workos.api_key = os.getenv('WORKOS_API_KEY')
 workos.base_api_url = 'http://localhost:5000/' if DEBUG else workos.base_api_url
 directory_id = os.getenv('DIRECTORY_ID')
 
+@app.route('/')
+def home():
+    return render_template('home.html')
 
 @app.route('/users')
 def directory_users():
