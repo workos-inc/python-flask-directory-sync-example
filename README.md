@@ -89,7 +89,7 @@ If you get stuck, please reach out to us at support@workos.com so we can help.
    flask run
    ```
 
-2. Once the server is running, navigate to http://localhost:5000/users and http://localhost:5000/groups to try out Directory Sync!
+2. Once the server is running, navigate to http://localhost:5000 to view the home page of the app where you can then select the view for users or groups. Alternatively you could also view these directly using the following url's: http://localhost:5000/users and http://localhost:5000/groups.
 
     - The `/users` URL corresponds to the WorkOS API's [List Directory Users endpoint](https://workos.com/docs/reference/directory-sync/user/list)
     - The `/groups` URL corresponds to the WorkOS API's [List Directory Groups endpoint](https://workos.com/docs/reference/directory-sync/group/list)
